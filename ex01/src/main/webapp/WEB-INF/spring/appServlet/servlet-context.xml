@@ -21,8 +21,17 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+		<beans:property value="utf-8" name="defaultEncoding"/>
+		<!-- 1024 * 1024 * 10 bytes 10MB -->
+		<beans:property value="104857560" name="maxUploadSize"/>
+		<!-- 1024 * 1024 * 2 bytes 2MB -->
+		<beans:property value="2097152" name="maxUploadSizePerFile"/>
+		<beans:property value="file:/C:/upload/tmp" name="uploadTempDir"/>
+		<beans:property value="10485756" name="maxInMemorySize"/>
+	</beans:bean>
+	
 	<context:component-scan base-package="com.dand.controller" />
-	
-	
+	<context:component-scan base-package="com.dand.exception"/>
 	
 </beans:beans>
