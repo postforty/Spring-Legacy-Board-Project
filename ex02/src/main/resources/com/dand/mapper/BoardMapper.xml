@@ -25,4 +25,12 @@
 	insert into tbl_board (bno,title,content,writer) value (#{bno}, #{title}, #{content}, #{writer})
 </insert>
 
+<select id="read" resultType="com.dand.domain.BoardVO">
+	select * from tbl_board where bno=#{bno}
+</select>
+
+<delete id="delete">
+	delete from tbl_board where bno=#{bno}
+</delete>
+
 </mapper>
