@@ -10,4 +10,19 @@
 	]]>
 </select>
 
+<insert id="insert">
+	<!-- insert into tbl_board (bno,title,content,writer) value (seq_board.nextval, #{title}, #{content}, #{writer}) -->
+	insert into tbl_board (title,content,writer) value (#{title}, #{content}, #{writer})
+</insert>
+
+<insert id="insertSelectKey">
+	<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+		<!-- select last_insert_id(); -->
+		select max(bno)+1 from tbl_board
+	</selectKey>
+	
+	<!-- insert into tbl_board (bno,title,content,writer) value (seq_board.nextval, #{title}, #{content}, #{writer}) -->
+	insert into tbl_board (bno,title,content,writer) value (#{bno}, #{title}, #{content}, #{writer})
+</insert>
+
 </mapper>
