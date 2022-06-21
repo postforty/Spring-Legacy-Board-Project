@@ -21,24 +21,36 @@ public class BoardServiceTests {
 	@Setter(onMethod_ = {@Autowired})
 	private BoardService service;
 	
-	@Test
-	public void testExist() {
-		
-		log.info(service);
-		assertNotNull(service);
-	}
+//	@Test
+//	public void testExist() {
+//		
+//		log.info(service);
+//		assertNotNull(service);
+//	}
+//	
+//	@Test
+//	public void testRegister() {
+//		
+//		BoardVO board = new BoardVO();
+//		board.setTitle("새로 작성하는 글_service테스트");
+//		board.setContent("새로 작성하는 내용_service테스트");
+//		board.setWriter("newbie");
+//		
+//		service.register(board);
+//		
+//		log.info(board);
+//	}
+	
+//	@Test
+//	public void testGetList() {
+//		
+//		service.getList().forEach(board -> log.info(board));
+//	}
 	
 	@Test
-	public void testRegister() {
+	public void testGet() {
 		
-		BoardVO board = new BoardVO();
-		board.setTitle("새로 작성하는 글_service테스트");
-		board.setContent("새로 작성하는 내용_service테스트");
-		board.setWriter("newbie");
-		
-		service.register(board);
-		
-		log.info(board);
+		log.info(service.get(1L));
 	}
 
 }
