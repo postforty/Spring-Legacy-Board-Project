@@ -39,14 +39,18 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public boolean modify(BoardVO board) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		log.info("modify......." + board);
+		
+		return mapper.update(board) == 1;
 	}
 
 	@Override
 	public boolean remove(Long bno) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		log.info("remove......." + bno);
+		
+		return mapper.delete(bno) == 1;
 	}
 
 	@Override
