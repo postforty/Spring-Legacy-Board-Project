@@ -1,5 +1,9 @@
 package com.dand.mapper;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dand.domain.BoardVO;
+import com.dand.domain.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -64,19 +69,27 @@ public class BoardMapperTests {
 //		log.info("DELETE COUNT: " + mapper.delete(6L));
 //	}
 	
+//	@Test
+//	public void testUpdate() {
+//		
+//		BoardVO board = new BoardVO();
+//		board.setBno(5L);
+//		board.setTitle("수정된 제목");
+//		board.setContent("수정된 내용");
+//		board.setWriter("user00");
+//		
+//		int count = mapper.update(board);
+//		log.info("UPDATE COUNT: " + count);
+//	}
+	
 	@Test
-	public void testUpdate() {
+	public void testPaging() {
 		
-		BoardVO board = new BoardVO();
-		board.setBno(5L);
-		board.setTitle("수정된 제목");
-		board.setContent("수정된 내용");
-		board.setWriter("user00");
+		Criteria cri = new Criteria();
 		
-		int count = mapper.update(board);
-		log.info("UPDATE COUNT: " + count);
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		
+		list.forEach(board -> log.info(board));
 	}
-	
-	
 
 }

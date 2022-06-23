@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dand.domain.BoardVO;
+import com.dand.domain.Criteria;
 import com.dand.mapper.BoardMapper;
 
 import lombok.AllArgsConstructor;
@@ -54,10 +55,10 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardVO> getList() {
+	public List<BoardVO> getList(Criteria cri) {
 
-		log.info("getList.......");
+		log.info("get List with criteria: " + cri);
 		
-		return mapper.getList();
+		return mapper.getListWithPaging(cri);
 	}
 }

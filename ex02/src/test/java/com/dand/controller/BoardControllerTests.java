@@ -61,12 +61,26 @@ public class BoardControllerTests {
 //		log.info(resultPage);
 //	}
 	
+//	@Test
+//	public void testRemove() throws Exception{
+//		
+//		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove").param("bno", "11")).andReturn().getModelAndView().getViewName();
+//		
+//		log.info(resultPage);
+//	}
+//	
+//	@Test
+//	public void testRemove() throws Exception{
+//		
+//		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove").param("bno", "11")).andReturn().getModelAndView().getViewName();
+//		
+//		log.info(resultPage);
+//	}
+	
 	@Test
-	public void testRemove() throws Exception{
+	public void testListPaging() throws Exception{
 		
-		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove").param("bno", "11")).andReturn().getModelAndView().getViewName();
-		
-		log.info(resultPage);
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list").param("pageNum", "0").param("amount", "10")).andReturn().getModelAndView().getModelMap());
 	}
 	
 	

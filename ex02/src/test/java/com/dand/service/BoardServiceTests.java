@@ -1,6 +1,6 @@
 package com.dand.service;
 
-import static org.junit.Assert.assertNotNull;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.dand.domain.BoardVO;
+import com.dand.domain.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -59,17 +59,24 @@ public class BoardServiceTests {
 //		log.info("REMOVE RESULT: " + service.remove(2L));
 //	}
 	
+//	@Test
+//	public void testUpdate() {
+//		
+//		BoardVO board = service.get(1L);
+//		
+//		if(board == null) {
+//			return;
+//		}
+//		
+//		board.setTitle("제목 수정합니다.");
+//		log.info("MODIFY RESULT: " + service.modify(board));
+//	}
+	
 	@Test
-	public void testUpdate() {
+	public void testGetList() {
 		
-		BoardVO board = service.get(1L);
+		service.getList(new Criteria(0, 10)).forEach(board -> log.info(board));
 		
-		if(board == null) {
-			return;
-		}
-		
-		board.setTitle("제목 수정합니다.");
-		log.info("MODIFY RESULT: " + service.modify(board));
 	}
 
 }
