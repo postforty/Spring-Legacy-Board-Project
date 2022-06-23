@@ -42,30 +42,53 @@
                        	</tr>
                      </c:forEach>
                  </table>
-                 
-                 <!-- Modal -->
-                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                             </div>
-	                             <div class="modal-body">
-	                                 처리가 완료되었습니다.
-	                             </div>
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                             </div>
-                         </div>
-                         <!-- /.modal-content -->
-                     </div>
-                     <!-- /.modal-dialog -->
-                 </div>
-                 <!-- /.modal -->
-                 
-            </div>
+                
+                <!-- Pagination -->
+                <div class='pull-right'>
+					<ul class="pagination">
+
+						<c:if test="${pageMaker.prev}">
+			              <li class="paginate_button previous"><a href="#">Previous</a>
+			              </li>
+			            </c:if>
+			
+			            <c:forEach var="num" begin="${pageMaker.startPage}"
+			              end="${pageMaker.endPage}">
+			              <li class="paginate_button"><a href="#">${num}</a></li>
+			            </c:forEach>
+			
+			            <c:if test="${pageMaker.next}">
+			              <li class="paginate_button next"><a href="#">Next</a></li>
+			            </c:if>
+
+					</ul>
+				</div>
+				<!--  end Pagination -->
+			</div>
             <!-- /.panel-body -->
+                 
+                 
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                         <div class="modal-body">
+                             처리가 완료되었습니다.
+                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            
         </div>
         <!-- /.panel -->
     </div>

@@ -12,7 +12,7 @@
 
 <select id="getListWithPaging" resultType="com.dand.domain.BoardVO">
 <![CDATA[
-	select bno, title, content, writer, regdate, updatedate from tbl_board WHERE bno > 0 order by bno DESC, regdate DESC LIMIT #{pageNum}, #{amount};
+	select bno, title, content, writer, regdate, updatedate from tbl_board WHERE bno > 0 order by bno asc, regdate DESC LIMIT #{pageNum}, #{amount};
 	]]>
 </select>
 

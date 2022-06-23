@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dand.domain.BoardVO;
 import com.dand.domain.Criteria;
+import com.dand.domain.PageDTO;
 import com.dand.service.BoardService;
 
 import lombok.AllArgsConstructor;
@@ -35,6 +36,7 @@ public class BoardController {
 		
 		log.info("list: " + cri);
 		model.addAttribute("list", service.getList(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
 	
 	@PostMapping("/register")
