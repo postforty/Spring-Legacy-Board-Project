@@ -36,6 +36,7 @@ public class BoardController {
 	public void list(Criteria cri, Model model) {
 		
 		log.info("list: " + cri);
+		
 		model.addAttribute("list", service.getList(cri));
 //		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 		
@@ -46,6 +47,11 @@ public class BoardController {
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
+	private void getSkipCount(Criteria cri) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr) {
 		
