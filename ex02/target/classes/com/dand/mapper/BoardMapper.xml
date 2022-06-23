@@ -12,7 +12,10 @@
 
 <select id="getListWithPaging" resultType="com.dand.domain.BoardVO">
 <![CDATA[
-	select bno, title, content, writer, regdate, updatedate from tbl_board WHERE bno > 0 order by bno asc, regdate DESC LIMIT #{skipCount}, #{amount}
+	select * from (
+		select bno, title, writer, regdate, updatedate
+		from tbl_board order by bno asc, regdate desc) as T1
+	limit #{skip}, #{amount}
 	]]>
 </select>
 

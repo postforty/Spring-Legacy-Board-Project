@@ -87,6 +87,8 @@ public class BoardMapperTests {
 		
 		Criteria cri = new Criteria();
 		
+		cri.setPageNum(5);
+		
 		List<BoardVO> list = mapper.getListWithPaging(cri);
 		
 		list.forEach(board -> log.info(board));
