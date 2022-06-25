@@ -49,4 +49,14 @@ public class Criteria {
 		return type == null? new String[] {}: type.split("");
 	}
 	
+	public void setType(String type) {
+		
+		this.type = type;
+	}
+	
+	public void setKeyword(String keyword) {
+		
+		this.keyword = keyword;
+	}
+	
 }
