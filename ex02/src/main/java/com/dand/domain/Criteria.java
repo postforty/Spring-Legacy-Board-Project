@@ -11,6 +11,9 @@ public class Criteria {
 	private int amount;
 	private int skip;
 	
+	private String type;
+	private String keyword;
+	
 	public Criteria() {
 		this(1, 10);
 		this.skip = 0;
@@ -40,4 +43,10 @@ public class Criteria {
 		
 		this.skip = skip;
 	}
+	
+	public String[] getTypeArr() {
+		
+		return type == null? new String[] {}: type.split("");
+	}
+	
 }
