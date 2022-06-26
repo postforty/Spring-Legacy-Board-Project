@@ -11,8 +11,8 @@ public class Criteria {
 	private int amount;
 	private int skip;
 	
-	private String type;
-	private String keyword;
+//	private String type;
+//	private String keyword;
 	
 	public Criteria() {
 		this(1, 10);
@@ -44,19 +44,19 @@ public class Criteria {
 		this.skip = skip;
 	}
 	
-	public String[] getTypeArr() {
-		
-		return type == null? new String[] {}: type.split("");
-	}
+//	public String[] getTypeArr() {
+//		
+//		return type == null? new String[] {}: type.split("");
+//	}
 	
-	public void setType(String type) {
-		
-		this.type = type;
-	}
+//	public void setType(String type) {
+//		
+//		this.type = type;
+//	}
 	
-	public void setKeyword(String keyword) {
-		
-		this.keyword = keyword;
-	}
+//	public void setKeyword(String keyword) {
+//		
+//		this.keyword = keyword;
+//	}
 	
 }
