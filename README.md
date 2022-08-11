@@ -3,7 +3,7 @@
 + Part 1 스프링 개발 환경 구축
   + JDK 1.8
   + Tomcat 9
-  + Lombok Library 설치
+  + Lombok
   + MySQL 연동
   + MyBatis 연동
 
